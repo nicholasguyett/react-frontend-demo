@@ -1,25 +1,35 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from "react";
+import { StepTracker } from "./step-tracker";
 
 function App() {
+  // TODO add localization
+  const stepList = ["Your info", "Select plan", "Add-ons", "Summary"].map(
+    (label, id) => ({
+      label,
+      controlId: `form-step-${id}`,
+    }),
+  );
+
+  const [currentStep, setStep] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <StepTracker
+        currentStep={currentStep}
+        setStep={setStep}
+        stepList={stepList}
+      />
+      <ul>
+        {stepList.map(({ label, controlId }, step) => (
+          <li id={controlId} aria-role="tabpanel" hidden={step !== currentStep}>
+            {/* TODO: Replace placeholder content with actual components */}
+            <fieldset>
+              <legend>{label}</legend>
+            </fieldset>
+          </li>
+        ))}
+        ,
+      </ul>
+    </main>
   );
 }
 
