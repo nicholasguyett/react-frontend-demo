@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./step-tracker.module.css";
 
-interface StepInfo {
+export interface StepInfo {
   label: string;
   controlId: string;
 }

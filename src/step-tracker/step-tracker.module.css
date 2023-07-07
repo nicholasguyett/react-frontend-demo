@@ -3,7 +3,7 @@
     padding: none;
     margin: none;
     counter-reset: step-tracker__step 0;
-    background: #483eff;
+    background: var(--primary-background);
     color: var(--primary-text);
     padding: 3em;
 
