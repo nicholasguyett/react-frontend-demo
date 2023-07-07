@@ -1,0 +1,52 @@
+.tab-list {
+    list-style: none;
+    padding: none;
+    margin: none;
+    counter-reset: step-tracker__step 0;
+    background: #483eff;
+    color: var(--primary-text);
+    padding: 3em;
+
+    --primary-text: var(--primary-text-light);
+    --secondary-text: var(--secondary-text-light);
+}
+
+.step-tab {
+    display: flex;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+}
+.step-tab::before {
+    width: 1.5em;
+    height: 1.5em;
+    padding: .5em;
+
+    border-radius: 100%;
+    border: 1px solid white;
+
+    line-height: 1.25em;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+
+    counter-increment: step-tracker__step;
+    content: counter(step-tracker__step);
+}
+.step-tab[aria-selected]::before {
+    border: none;
+    background: #bbe0fe;
+    color: var(--primary-text-dark);
+}
+
+.step-text {
+    margin-left: 1em;
+}
+.tab-step-number, .tab-label {
+    margin-bottom: .25em;
+}
+.tab-step-number {
+    color: var(--secondary-text);
+}
+.tab-label {
+    font-weight: bold;
+}
