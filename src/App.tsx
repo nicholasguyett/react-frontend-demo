@@ -4,21 +4,42 @@ import { YourInfo } from "./form-steps";
 import { StepInfo } from "./step-tracker/step-tracker";
 
 import styles from "./App.module.css";
-import { StepProps } from "./form-steps/FormStep";
+import { FormStep, StepProps } from "./form-steps/FormStep";
 
 function App() {
   // TODO add localization
   const stepList: (StepInfo & {
-    componentBuilder?: (props: StepProps) => JSX.Element;
+    componentBuilder: (props: StepProps) => JSX.Element;
   })[] = [
     {
       label: "Your info",
       controlId: useId(),
       componentBuilder: (props) => YourInfo(props),
     },
-    { label: "Select plan", controlId: useId() },
-    { label: "Add-ons", controlId: useId() },
-    { label: "Summary", controlId: useId() },
+    {
+      label: "Select plan",
+      controlId: useId(),
+      componentBuilder: (props) =>
+        FormStep({ title: "Plan", summary: "", children: [], ...props }),
+    },
+    {
+      label: "Add-ons",
+      controlId: useId(),
+      componentBuilder: (props) =>
+        FormStep({ title: "Add-ons", summary: "", children: [], ...props }),
+    },
+    {
+      label: "Summary",
+      controlId: useId(),
+      componentBuilder: (props) =>
+        FormStep({
+          title: "Summary",
+          summary: "",
+          isLastStep: true,
+          children: [],
+          ...props,
+        }),
+    },
   ];
 
   const [currentStep, setStep] = useState(0);
@@ -36,7 +57,7 @@ function App() {
             role="tabpanel"
             id={stepList[step].controlId}
             hidden={step !== currentStep}
-            key={currentStep}
+            key={step}
           >
             {componentBuilder?.({ currentStep, setStep })}
           </div>
