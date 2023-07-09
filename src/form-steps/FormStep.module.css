@@ -10,3 +10,31 @@
 .form-group {
     margin: 3.5em 5em;
 }
+
+.button-group {
+    margin: 5em 0 1em;
+    display: flex;
+    justify-content: space-between;
+}
+.back-button, .next-button {
+    padding: 1em 1.5em;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+.back-button {
+    background: var(--background-primary-light);
+    color: var(--secondary-text-dark);
+}
+.back-button:hover, back-button:focus {
+    color: var(--primary-text-dark);
+}
+
+.next-button {
+    background-color: var(--button-background);
+    color: var(--primary-text-light);
+}
+.next-button:hover, .next-button:focus {
+    background-color: var(--button-background-active);
+}

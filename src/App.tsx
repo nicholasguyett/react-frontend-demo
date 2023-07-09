@@ -4,11 +4,18 @@ import { YourInfo } from "./form-steps";
 import { StepInfo } from "./step-tracker/step-tracker";
 
 import styles from "./App.module.css";
+import { StepProps } from "./form-steps/FormStep";
 
 function App() {
   // TODO add localization
-  const stepList: (StepInfo & { component?: JSX.Element })[] = [
-    { label: "Your info", controlId: useId(), component: <YourInfo /> },
+  const stepList: (StepInfo & {
+    componentBuilder?: (props: StepProps) => JSX.Element;
+  })[] = [
+    {
+      label: "Your info",
+      controlId: useId(),
+      componentBuilder: (props) => YourInfo(props),
+    },
     { label: "Select plan", controlId: useId() },
     { label: "Add-ons", controlId: useId() },
     { label: "Summary", controlId: useId() },
@@ -24,13 +31,14 @@ function App() {
         className={styles["step-tracker"]}
       />
       <form className={styles["app-form"]}>
-        {stepList.map(({ component }, step) => (
+        {stepList.map(({ componentBuilder }, step) => (
           <div
             role="tabpanel"
             id={stepList[step].controlId}
             hidden={step !== currentStep}
+            key={currentStep}
           >
-            {component}
+            {componentBuilder?.({ currentStep, setStep })}
           </div>
         ))}
       </form>

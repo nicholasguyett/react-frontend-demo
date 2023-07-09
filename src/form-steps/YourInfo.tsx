@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from "react";
-import { FormStep } from "./FormStep";
+import { FormStep, StepProps } from "./FormStep";
 import styles from "./YourInfo.module.css";
 
 function FormControl({
@@ -20,11 +20,13 @@ function FormControl({
   );
 }
 
-export function YourInfo() {
+export function YourInfo(stepProps: StepProps) {
   return (
     <FormStep
       title="Personal Info"
       summary="Please provide your name, email address, and phone number."
+      isFirstStep
+      {...stepProps}
     >
       <FormControl label="Name" name="name" placeholder="e.g. Stephen King" />
       <FormControl

@@ -31,8 +31,10 @@ code {
     --primary-background-light: #ffffff;
     --primary-background-dark: #483eff;
 
-    --secondary-background: var(--primary-text-dark);
     --backdrop-background: #eef5ff;
+
+    --button-background: var(--primary-text-dark);
+    --button-background-active: #164989;
 
     --primary-border: var(--primary-background);
     --secondary-border: var(--secondary-text-dark);
