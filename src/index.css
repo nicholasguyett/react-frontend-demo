@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   line-height: 1;
+  background: var(--backdrop-background);
 
   color: var(--primary-text);
 }
@@ -27,8 +28,11 @@ code {
     --secondary-text-dark: #777777;
     --secondary-text-light: #cccccc;
 
-    --primary-background: #483eff;
+    --primary-background-light: #ffffff;
+    --primary-background-dark: #483eff;
+
     --secondary-background: var(--primary-text-dark);
+    --backdrop-background: #eef5ff;
 
     --primary-border: var(--primary-background);
     --secondary-border: var(--secondary-text-dark);

@@ -1,11 +1,12 @@
 .tab-list {
     list-style: none;
-    padding: none;
-    margin: none;
-    counter-reset: step-tracker__step 0;
-    background: var(--primary-background);
-    color: var(--primary-text);
+    height: 100%;
+    margin: 0;
     padding: 3em;
+    counter-reset: step-tracker__step 0;
+    background: var(--primary-background-dark);
+    color: var(--primary-text);
+    border-radius: 1em;
 
     --primary-text: var(--primary-text-light);
     --secondary-text: var(--secondary-text-light);

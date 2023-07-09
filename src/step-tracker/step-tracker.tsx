@@ -1,4 +1,4 @@
-import React from "react";
+import React, { AriaAttributes, HTMLAttributes } from "react";
 import styles from "./step-tracker.module.css";
 
 export interface StepInfo {
@@ -10,13 +10,14 @@ export function StepTracker({
   currentStep,
   setStep,
   stepList,
+  className,
 }: {
   currentStep: number;
   setStep: (step: number) => void;
   stepList: StepInfo[];
-}) {
+} & { className?: string }) {
   return (
-    <nav>
+    <nav className={className}>
       <ul className={styles["tab-list"]} role="tablist">
         {stepList.map(({ label, controlId }, step) => (
           <li

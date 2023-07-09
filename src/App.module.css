@@ -1,0 +1,16 @@
+.app-wrapper {
+    display: flex;
+    max-width: 1080px;
+    margin: 5em auto;
+    border-radius: 1em;
+    background: var(--primary-background-light);
+    padding: 1em;
+}
+
+.step-tracker {
+    flex: 1;
+}
+.app-form {
+    flex: 2;
+}
+
