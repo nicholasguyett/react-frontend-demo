@@ -36,7 +36,7 @@ code {
     --button-background: var(--primary-text-dark);
     --button-background-active: #164989;
 
-    --primary-border: var(--primary-background);
+    --primary-border: var(--primary-background-dark);
     --secondary-border: var(--secondary-text-dark);
 
     --primary-text: var(--primary-text-dark);
