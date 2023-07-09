@@ -21,6 +21,7 @@ export function StepTracker({
       <ul className={styles["tab-list"]} role="tablist">
         {stepList.map(({ label, controlId }, step) => (
           <li
+            key={controlId}
             className={styles["step-tab"]}
             role="tab"
             aria-selected={step === currentStep || undefined}
