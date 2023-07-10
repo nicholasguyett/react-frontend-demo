@@ -128,7 +128,9 @@ export function SelectPlan({
     <FormStep
       title="Select your plan"
       summary="You have the option of monthly or yearly billing"
-      isValid={true}
+      isValid={
+        true /* Plan and frequency are pre-set and cannot be unselected */
+      }
       {...stepProps}
     >
       <ul className={styles["plan-group"]}>
