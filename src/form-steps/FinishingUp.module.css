@@ -1,0 +1,39 @@
+.pricing-line-item-list {
+    background: var(--secondary-background-light);
+    padding: 2em;
+}
+.pricing-line-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--secondary-text-dark);
+    margin: 1em 0;
+}
+
+.plan-pricing, .addon-pricing {
+    flex-shrink: 1;
+    color: var(--primary-text-dark);
+}
+
+.plan-pricing, .plan-description {
+    font-weight: bold;
+    color: var(--primary-text-dark);
+}
+
+.total-pricing {
+    font-weight: bold;
+    color: var(--primary-background-dark);
+}
+.total-pricing-wrapper {
+    margin: 0 2em;
+}
+
+.change-plan-button {
+    padding: 0;
+    margin-top: .5em;
+    background: none;
+    text-decoration: underline;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+}
+

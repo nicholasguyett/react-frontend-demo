@@ -32,3 +32,18 @@ export function formatPrice(pricing: Pricing, frequency: PlanFrequency) {
 
   return `${priceFormatter.format(price)}/${frequencyAbbreviation}`;
 }
+
+export function formatAggregatePrice(
+  pricings: Pricing[],
+  frequency: PlanFrequency,
+) {
+  const frequencyLabel = frequencyToLabel(frequency);
+  const totalPricing: Pricing = Object.fromEntries(
+    Object.keys(PlanFrequency).map((planFrequencyLabel) => [
+      planFrequencyLabel,
+      pricings.reduce((sum, pricing) => sum + pricing[frequencyLabel], 0),
+    ]),
+  ) as Pricing;
+
+  return formatPrice(totalPricing, frequency);
+}

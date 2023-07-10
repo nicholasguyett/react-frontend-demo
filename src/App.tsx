@@ -9,6 +9,7 @@ import { SelectPlan } from "./form-steps/SelectPlan";
 import { PlanFrequency, getAvailablePlans } from "./data";
 import { AddOns } from "./form-steps/Addons";
 import { AddOnInfo, getAvailableAddOns } from "./data/addons";
+import { FinishingUp } from "./form-steps/FinishingUp";
 
 function App() {
   // TODO add localization
@@ -54,12 +55,10 @@ function App() {
       label: "Summary",
       controlId: useId(),
       componentBuilder: (props) =>
-        FormStep({
-          title: "Summary",
-          summary: "",
-          isLastStep: true,
-          isValid: true,
-          children: [],
+        FinishingUp({
+          selectedPlan,
+          selectedFrequency: frequency,
+          selectedAddOns,
           ...props,
         }),
     },
