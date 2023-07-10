@@ -9,17 +9,19 @@ export interface StepProps {
 export function FormStep({
   title,
   summary,
-  children,
+  isValid,
   isFirstStep,
   isLastStep,
   currentStep,
   setStep,
+  children,
 }: {
   title: string;
   summary: string;
-  children: ReactNode[];
+  isValid: boolean;
   isFirstStep?: boolean;
   isLastStep?: boolean;
+  children: ReactNode[];
 } & StepProps) {
   return (
     <section className={styles["form-group"]}>
@@ -48,6 +50,7 @@ export function FormStep({
             type="button"
             className={styles["next-button"]}
             onClick={() => setStep(currentStep + 1)}
+            disabled={!isValid}
           >
             Next Step
           </button>

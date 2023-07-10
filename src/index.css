@@ -38,6 +38,7 @@ code {
 
     --primary-border: var(--primary-background-dark);
     --secondary-border: var(--secondary-text-dark);
+    --danger-border: #a15b63;
 
     --primary-text: var(--primary-text-dark);
     --secondary-text: var(--secondary-text-dark);

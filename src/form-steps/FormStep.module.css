@@ -38,3 +38,6 @@
 .next-button:hover, .next-button:focus {
     background-color: var(--button-background-active);
 }
+.next-button:disabled {
+    background: var(--secondary-text-light);
+}

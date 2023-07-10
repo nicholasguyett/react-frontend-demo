@@ -22,3 +22,7 @@
 .form-input::placeholder {
   color: var(--secondary-text);
 }
+.invalid {
+    outline:  2px solid var(--danger-border);
+    border-color: transparent;
+}
