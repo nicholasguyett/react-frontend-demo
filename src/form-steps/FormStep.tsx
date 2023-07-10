@@ -47,9 +47,8 @@ export function FormStep({
         </span>
         {isLastStep ? (
           <button
-            type="button"
+            type="submit"
             className={styles["submit-button"]}
-            onClick={() => setStep(currentStep + 1)}
             disabled={!isValid}
           >
             Confirm
