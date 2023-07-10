@@ -31,6 +31,8 @@ code {
     --primary-background-light: #ffffff;
     --primary-background-dark: #483eff;
 
+    --secondary-background-light: #f8f9fe;
+
     --backdrop-background: #eef5ff;
 
     --button-background: var(--primary-text-dark);

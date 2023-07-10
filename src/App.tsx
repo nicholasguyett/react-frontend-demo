@@ -5,26 +5,58 @@ import { StepInfo } from "./step-tracker/step-tracker";
 
 import styles from "./App.module.css";
 import { FormStep, StepProps } from "./form-steps/FormStep";
+import { SelectPlan } from "./form-steps/SelectPlan";
+import { PlanFrequency, PlanInfo } from "./data";
 
 function App() {
   // TODO add localization
+  const availablePlans: PlanInfo[] = [
+    {
+      userLabel: "Arcade",
+      machineLabel: "arcade",
+      pricing: {
+        Monthly: 9,
+        Yearly: 90,
+      },
+    },
+    {
+      userLabel: "Advanced",
+      machineLabel: "advanced",
+      pricing: {
+        Monthly: 12,
+        Yearly: 120,
+      },
+    },
+    {
+      userLabel: "Pro",
+      machineLabel: "pro",
+      pricing: {
+        Monthly: 15,
+        Yearly: 150,
+      },
+    },
+  ];
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [frequency, setFrequency] = useState(PlanFrequency.Monthly);
+
   const stepList: (StepInfo & {
     componentBuilder: (props: StepProps) => JSX.Element;
   })[] = [
     {
       label: "Your info",
       controlId: useId(),
-      componentBuilder: (props) => YourInfo(props),
+      componentBuilder: YourInfo,
     },
     {
       label: "Select plan",
       controlId: useId(),
       componentBuilder: (props) =>
-        FormStep({
-          title: "Plan",
-          summary: "",
-          isValid: true,
-          children: [],
+        SelectPlan({
+          availablePlans,
+          selectedPlan,
+          frequency,
+          setFrequency,
+          setSelectedPlan,
           ...props,
         }),
     },

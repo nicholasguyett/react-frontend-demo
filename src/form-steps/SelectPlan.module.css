@@ -1,0 +1,83 @@
+.plan-option input, .frequency-option input {
+    /* Visually hide but leave visible to screen readers */
+    appearance: none;
+    height: 1px;
+    width: 1px;
+    margin: -1px 0;
+}
+.plan-option input:focus, .frequency-option input:focus {
+    outline: none; /* Outline is placed on label instead */
+}
+
+/* Plan option styling */
+.plan-group {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0;
+    gap: 1em;
+}
+.plan-group > li {
+    margin: 0;
+    flex-grow: 1;
+}
+.plan-option {
+    display: flex;
+    flex-direction: column;
+    border-radius: .5em;
+    border: 1px solid var(--secondary-border);
+    padding: 1em;
+    cursor: pointer;
+
+    position: relative;
+}
+.selected-plan {
+    border-color: var(--primary-border);
+}
+.focused-plan {
+    /* TODO: Create better focused styling */
+    border-color: transparent;
+    outline: 2px solid var(--primary-border);
+}
+
+.plan-name {
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+    
+.plan-price {
+    color: var(--secondary-text-dark);
+}
+
+.plan-savings {
+    margin-top: .25em;
+}
+
+/* Frequency option styling */
+.frequency-wrapper {
+    display: flex;
+    padding: 1em;
+    justify-content: center;
+    gap: 1em;
+    font-weight: bold;
+
+    color: var(--secondary-text-dark);
+}
+
+.frequency-option {
+    cursor: pointer;
+}
+
+.frequency-label {
+    border: 1px solid var(--secondary-border);
+    color: var(--primary-text-dark);
+    padding: 1em;
+    border-radius: .5em;
+}
+.selected-frequency > .frequency-label {
+    border-color: var(--primary-border);
+}
+.frequency-option input:focus + .frequency-label {
+    outline: 1px solid var(--primary-border);
+}

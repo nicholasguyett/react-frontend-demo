@@ -21,7 +21,7 @@ export function FormStep({
   isValid: boolean;
   isFirstStep?: boolean;
   isLastStep?: boolean;
-  children: ReactNode[];
+  children: ReactNode | ReactNode[];
 } & StepProps) {
   return (
     <section className={styles["form-group"]}>
