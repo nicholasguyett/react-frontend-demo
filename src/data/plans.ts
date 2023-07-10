@@ -6,24 +6,24 @@ export function getAvailablePlans(): PlanInfo[] {
       userLabel: "Arcade",
       machineLabel: "arcade",
       pricing: {
-        Monthly: 7,
-        Yearly: 88,
+        Monthly: 9,
+        Yearly: 90,
       },
     },
     {
       userLabel: "Advanced",
       machineLabel: "advanced",
       pricing: {
-        Monthly: 10,
-        Yearly: 118,
+        Monthly: 12,
+        Yearly: 12,
       },
     },
     {
       userLabel: "Pro",
       machineLabel: "pro",
       pricing: {
-        Monthly: 13,
-        Yearly: 148,
+        Monthly: 15,
+        Yearly: 15,
       },
     },
   ];
