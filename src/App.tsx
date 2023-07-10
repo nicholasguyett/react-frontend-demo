@@ -12,7 +12,8 @@ import { AddOnInfo, getAvailableAddOns } from "./data/addons";
 
 function App() {
   // TODO add localization
-  const [selectedPlan, setSelectedPlan] = useState("");
+  const availablePlans = getAvailablePlans();
+  const [selectedPlan, setSelectedPlan] = useState(availablePlans[0]);
   const [frequency, setFrequency] = useState(PlanFrequency.Monthly);
   const [selectedAddOns, setSelectedAddOns] = useState<AddOnInfo[]>([]);
 

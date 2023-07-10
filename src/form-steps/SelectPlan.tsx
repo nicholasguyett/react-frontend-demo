@@ -1,36 +1,32 @@
 import { useState } from "react";
-import {
-  PlanFrequency,
-  frequencyToLabel,
-  PlanInfo,
-  formatPrice,
-} from "../data";
+import { PlanFrequency, PlanInfo, formatPrice } from "../data";
 import { FormStep, StepProps } from "./FormStep";
 import styles from "./SelectPlan.module.css";
 
 function PlanOption({
-  userLabel,
-  machineLabel,
-  pricing,
+  planInfo,
   selectedFrequency,
   selectedPlan,
   setSelectedPlan,
 }: {
+  planInfo: PlanInfo;
   selectedFrequency: PlanFrequency;
-  selectedPlan: string;
-  setSelectedPlan: (selectedPlan: string) => void;
-} & PlanInfo) {
-  const priceInfo = formatPrice(pricing, selectedFrequency);
+  selectedPlan: PlanInfo;
+  setSelectedPlan: (selectedPlan: PlanInfo) => void;
+}) {
+  const priceInfo = formatPrice(planInfo.pricing, selectedFrequency);
   const [isFocused, setIsFocused] = useState(false);
   return (
     <label
       className={[
         styles["plan-option"],
-        selectedPlan === machineLabel ? styles["selected-plan"] : "",
+        selectedPlan.machineLabel === planInfo.machineLabel
+          ? styles["selected-plan"]
+          : "",
         isFocused ? styles["focused-plan"] : "",
       ].join(" ")}
     >
-      <span className={styles["plan-name"]}>{userLabel}</span>
+      <span className={styles["plan-name"]}>{planInfo.userLabel}</span>
       <span className={styles["plan-price"]}>{priceInfo}</span>
       {selectedFrequency === PlanFrequency.Yearly ? (
         <span className={styles["plan-savings"]}>2 months free</span>
@@ -43,8 +39,8 @@ function PlanOption({
       <input
         type="radio"
         name="plan"
-        value={machineLabel}
-        onChange={(event) => setSelectedPlan(event.target.value)}
+        value={planInfo.machineLabel}
+        onChange={(event) => setSelectedPlan(planInfo)}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
@@ -119,8 +115,8 @@ export function SelectPlan({
   ...stepProps
 }: {
   availablePlans: PlanInfo[];
-  selectedPlan: string;
-  setSelectedPlan: (selectedPlan: string) => void;
+  selectedPlan: PlanInfo;
+  setSelectedPlan: (selectedPlan: PlanInfo) => void;
   frequency: PlanFrequency;
   setFrequency: (frequency: PlanFrequency) => void;
 } & StepProps) {
@@ -137,7 +133,7 @@ export function SelectPlan({
         {availablePlans.map((planInfo) => (
           <li>
             <PlanOption
-              {...planInfo}
+              planInfo={planInfo}
               selectedFrequency={frequency}
               selectedPlan={selectedPlan}
               setSelectedPlan={setSelectedPlan}
