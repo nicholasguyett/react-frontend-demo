@@ -1,53 +1,54 @@
 .tab-list {
-    list-style: none;
-    height: 100%;
-    margin: 0;
-    padding: 3em;
-    counter-reset: step-tracker__step 0;
-    background: var(--primary-background-dark);
-    color: var(--primary-text);
-    border-radius: 1em;
+  list-style: none;
+  height: 100%;
+  margin: 0;
+  padding: 3em;
+  counter-reset: step-tracker__step 0;
+  background: var(--primary-background-dark);
+  color: var(--primary-text);
+  border-radius: 1em;
 
-    --primary-text: var(--primary-text-light);
-    --secondary-text: var(--secondary-text-light);
+  --primary-text: var(--primary-text-light);
+  --secondary-text: var(--secondary-text-light);
 }
 
 .step-tab {
-    display: flex;
-    margin-bottom: 2em;
-    text-transform: uppercase;
+  display: flex;
+  margin-bottom: 2em;
+  text-transform: uppercase;
 }
 .step-tab::before {
-    width: 1.5em;
-    height: 1.5em;
-    padding: .5em;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.5em;
 
-    border-radius: 100%;
-    border: 1px solid white;
+  border-radius: 100%;
+  border: 1px solid white;
 
-    line-height: 1.25em;
-    text-align: center;
-    vertical-align: middle;
-    font-weight: bold;
+  line-height: 1.25em;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
 
-    counter-increment: step-tracker__step;
-    content: counter(step-tracker__step);
+  counter-increment: step-tracker__step;
+  content: counter(step-tracker__step);
 }
 .step-tab[aria-selected]::before {
-    border: none;
-    background: #bbe0fe;
-    color: var(--primary-text-dark);
+  border: none;
+  background: #bbe0fe;
+  color: var(--primary-text-dark);
 }
 
 .step-text {
-    margin-left: 1em;
+  margin-left: 1em;
 }
-.tab-step-number, .tab-label {
-    margin-bottom: .25em;
+.tab-step-number,
+.tab-label {
+  margin-bottom: 0.25em;
 }
 .tab-step-number {
-    color: var(--secondary-text);
+  color: var(--secondary-text);
 }
 .tab-label {
-    font-weight: bold;
+  font-weight: bold;
 }

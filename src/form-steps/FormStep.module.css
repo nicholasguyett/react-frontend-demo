@@ -1,54 +1,59 @@
 .step-title {
-    font-size: 2em;
-    font-weight: bold;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 .step-summary {
-    color: var(--secondary-text);
+  color: var(--secondary-text);
 }
-    
+
 .form-group {
-    margin: 3.5em 5em;
+  margin: 3.5em 5em;
 }
 
 .button-group {
-    margin: 5em 0 1em;
-    display: flex;
-    justify-content: space-between;
+  margin: 5em 0 1em;
+  display: flex;
+  justify-content: space-between;
 }
-.back-button, .next-button, .submit-button {
-    padding: 1em 1.5em;
-    border: none;
-    border-radius: .5em;
-    cursor: pointer;
+.back-button,
+.next-button,
+.submit-button {
+  padding: 1em 1.5em;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
 }
 
 .back-button {
-    background: var(--background-primary-light);
-    color: var(--secondary-text-dark);
+  background: var(--background-primary-light);
+  color: var(--secondary-text-dark);
 }
-.back-button:hover, back-button:focus {
-    color: var(--primary-text-dark);
+.back-button:hover,
+back-button:focus {
+  color: var(--primary-text-dark);
 }
 
 .next-button {
-    background-color: var(--button-background);
-    color: var(--primary-text-light);
+  background-color: var(--button-background);
+  color: var(--primary-text-light);
 }
-.next-button:hover, .next-button:focus {
-    background-color: var(--button-background-active);
+.next-button:hover,
+.next-button:focus {
+  background-color: var(--button-background-active);
 }
 .next-button:disabled {
-    background: var(--secondary-text-light);
+  background: var(--secondary-text-light);
 }
 
 .submit-button {
-    background-color: var(--primary-background-dark);
-    color: var(--primary-text-light);
+  background-color: var(--primary-background-dark);
+  color: var(--primary-text-light);
 }
-.submit-button:hover, .next-button:focus {
-    background-color: var(--button-background-active);
+.submit-button:hover,
+.next-button:focus {
+  background-color: var(--button-background-active);
 }
 .submit-button:disabled {
-    background: var(--secondary-text-light);
+  background: var(--secondary-text-light);
 }

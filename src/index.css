@@ -22,27 +22,26 @@ code {
 }
 
 :root {
-    --primary-text-dark: #03295a;
-    --primary-text-light: white;
+  --primary-text-dark: #03295a;
+  --primary-text-light: white;
 
-    --secondary-text-dark: #777777;
-    --secondary-text-light: #cccccc;
+  --secondary-text-dark: #777777;
+  --secondary-text-light: #cccccc;
 
-    --primary-background-light: #ffffff;
-    --primary-background-dark: #483eff;
+  --primary-background-light: #ffffff;
+  --primary-background-dark: #483eff;
 
-    --secondary-background-light: #f8f9fe;
+  --secondary-background-light: #f8f9fe;
 
-    --backdrop-background: #eef5ff;
+  --backdrop-background: #eef5ff;
 
-    --button-background: var(--primary-text-dark);
-    --button-background-active: #164989;
+  --button-background: var(--primary-text-dark);
+  --button-background-active: #164989;
 
-    --primary-border: var(--primary-background-dark);
-    --secondary-border: var(--secondary-text-dark);
-    --danger-border: #a15b63;
+  --primary-border: var(--primary-background-dark);
+  --secondary-border: var(--secondary-text-dark);
+  --danger-border: #a15b63;
 
-    --primary-text: var(--primary-text-dark);
-    --secondary-text: var(--secondary-text-dark);
-
+  --primary-text: var(--primary-text-dark);
+  --secondary-text: var(--secondary-text-dark);
 }
