@@ -45,7 +45,16 @@ export function FormStep({
         <span>
           {/* Placeholder so next button is always aligned correctly.  TODO: remove need for placeholder */}
         </span>
-        {!isLastStep && (
+        {isLastStep ? (
+          <button
+            type="button"
+            className={styles["submit-button"]}
+            onClick={() => setStep(currentStep + 1)}
+            disabled={!isValid}
+          >
+            Confirm
+          </button>
+        ) : (
           <button
             type="button"
             className={styles["next-button"]}

@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
 }
-.back-button, .next-button {
+.back-button, .next-button, .submit-button {
     padding: 1em 1.5em;
     border: none;
     border-radius: .5em;
@@ -39,5 +39,16 @@
     background-color: var(--button-background-active);
 }
 .next-button:disabled {
+    background: var(--secondary-text-light);
+}
+
+.submit-button {
+    background-color: var(--primary-background-dark);
+    color: var(--primary-text-light);
+}
+.submit-button:hover, .next-button:focus {
+    background-color: var(--button-background-active);
+}
+.submit-button:disabled {
     background: var(--secondary-text-light);
 }
