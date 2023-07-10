@@ -7,12 +7,14 @@ import styles from "./App.module.css";
 import { FormStep, StepProps } from "./form-steps/FormStep";
 import { SelectPlan } from "./form-steps/SelectPlan";
 import { PlanFrequency, getAvailablePlans } from "./data";
+import { AddOns } from "./form-steps/Addons";
+import { AddOnInfo, getAvailableAddOns } from "./data/addons";
 
 function App() {
   // TODO add localization
   const [selectedPlan, setSelectedPlan] = useState("");
-  const availablePlans = getAvailablePlans();
   const [frequency, setFrequency] = useState(PlanFrequency.Monthly);
+  const [selectedAddOns, setSelectedAddOns] = useState<AddOnInfo[]>([]);
 
   const stepList: (StepInfo & {
     componentBuilder: (props: StepProps) => JSX.Element;
@@ -27,7 +29,7 @@ function App() {
       controlId: useId(),
       componentBuilder: (props) =>
         SelectPlan({
-          availablePlans,
+          availablePlans: getAvailablePlans(),
           selectedPlan,
           frequency,
           setFrequency,
@@ -39,11 +41,11 @@ function App() {
       label: "Add-ons",
       controlId: useId(),
       componentBuilder: (props) =>
-        FormStep({
-          title: "Add-ons",
-          summary: "",
-          isValid: true,
-          children: [],
+        AddOns({
+          availableAddOns: getAvailableAddOns(),
+          selectedAddOns,
+          setSelectedAddOns,
+          selectedFrequency: frequency,
           ...props,
         }),
     },
