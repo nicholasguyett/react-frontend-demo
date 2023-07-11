@@ -42,9 +42,6 @@ export function FormStep({
             Go Back
           </button>
         )}
-        <span>
-          {/* Placeholder so next button is always aligned correctly.  TODO: remove need for placeholder */}
-        </span>
         {isLastStep ? (
           <button
             type="submit"

@@ -37,6 +37,7 @@ back-button:focus {
 .next-button {
   background-color: var(--button-background);
   color: var(--primary-text-light);
+  margin-left: auto;  /* This ensures that the button is right aligned even if its the only button */
 }
 .next-button:hover,
 .next-button:focus {
