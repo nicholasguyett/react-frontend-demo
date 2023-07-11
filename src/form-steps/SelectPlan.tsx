@@ -88,8 +88,6 @@ function SelectFrequency({
   frequency: PlanFrequency;
   setFrequency: (frequency: PlanFrequency) => void;
 }) {
-  // NOTE: Implementing as radio buttons so this control is comprehensible to screen readers
-  // TODO: Create accesible implementation without unexpected behavior
   return (
     <div className={styles["frequency-wrapper"]}>
       <FrequencyOption
