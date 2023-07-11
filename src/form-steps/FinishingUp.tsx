@@ -12,9 +12,11 @@ import { FormStep, StepProps } from "./FormStep";
 function PlanPricingSummary({
   selectedPlan,
   selectedFrequency,
+  returnToSelectPlanStep,
 }: {
   selectedPlan: PlanInfo;
   selectedFrequency: PlanFrequency;
+  returnToSelectPlanStep: () => void;
 }) {
   return (
     <div className={styles["pricing-line-item"]}>
@@ -22,7 +24,11 @@ function PlanPricingSummary({
         <div className={styles["plan-description"]}>
           {selectedPlan.userLabel} ({PlanFrequency[selectedFrequency]})
         </div>
-        <button type="button" className={styles["change-plan-button"]}>
+        <button
+          type="button"
+          className={styles["change-plan-button"]}
+          onClick={returnToSelectPlanStep}
+        >
           Change
         </button>
       </div>
@@ -51,6 +57,7 @@ function AddOnPricingSummary({
 }
 
 export function FinishingUp({
+  returnToSelectPlanStep,
   selectedPlan,
   selectedFrequency,
   selectedAddOns,
@@ -59,6 +66,7 @@ export function FinishingUp({
   selectedPlan: PlanInfo;
   selectedFrequency: PlanFrequency;
   selectedAddOns: AddOnInfo[];
+  returnToSelectPlanStep: () => void;
 } & StepProps) {
   const allPricings = [
     selectedPlan.pricing,
@@ -76,6 +84,7 @@ export function FinishingUp({
         <PlanPricingSummary
           selectedPlan={selectedPlan}
           selectedFrequency={selectedFrequency}
+          returnToSelectPlanStep={returnToSelectPlanStep}
         />
         {selectedAddOns.length > 0 && <hr />}
         {selectedAddOns.map((addOnInfo) => (

@@ -59,6 +59,8 @@ function App() {
           selectedPlan,
           selectedFrequency: frequency,
           selectedAddOns,
+          returnToSelectPlanStep: () =>
+            setStep(1) /* TODO: Avoid the need to hardcode this */,
           ...props,
         }),
     },
